@@ -6,7 +6,7 @@ import {
   EyeClosedSVG,
   EyeOpenSVG,
 } from 'src/components'
-import { Button, Menu, MenuItem } from './options-styles'
+import { Button, Menu, MenuItem } from './card-options-styles'
 
 function Options({ isAmountVisible, setAmountVisibility }: IHeader) {
   const [showMenu, setShowMenu] = useState(false)

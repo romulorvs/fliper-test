@@ -2,39 +2,36 @@ import styled from 'styled-components'
 import { colors, hover, shimmerLoader } from 'src/styles'
 import { IContainer } from './card-types'
 
+const loadingContainer = `
+  article {
+    position: relative;
+    border-radius: 0.8rem;
+    overflow: hidden;
+
+    &:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      ${shimmerLoader}
+    }
+  }
+`
+
 export const Container = styled.section<IContainer>`
   display: flex;
   flex-direction: column;
   padding: 1.8rem 2.4rem;
   background-color: white;
   border-radius: 1.6rem;
-  box-shadow: 2px 2px 1px 0 #bfc5d6;
+  box-shadow: 2px 2px 1px 0 rgba(26, 57, 144, 0.25);
   margin: 14px;
   width: 34.5rem;
   max-width: 100%;
-  ${p =>
-    `${
-      p.loading
-        ? `
-    article {
-      position: relative;
-      border-radius: 0.8rem;
-      overflow: hidden;
-
-      &:after {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: 1;
-        ${shimmerLoader}
-      }
-    }
-  `
-        : ''
-    }`};
+  ${p => (p.loading === 'true' ? loadingContainer : '')};
 `
 export const Title = styled.article`
   display: flex;

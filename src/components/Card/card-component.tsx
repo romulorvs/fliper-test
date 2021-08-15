@@ -1,5 +1,5 @@
 import { formatPrice } from 'src/helpers'
-import Options from './Options'
+import Options from './CardOptions'
 import { ICard } from './card-types'
 import {
   Container,
@@ -20,7 +20,7 @@ function Card({
   isAmountVisible,
 }: ICard) {
   return (
-    <Container loading={loading}>
+    <Container loading={`${loading}`}>
       <Title>
         Seu Resumo <Options />
       </Title>

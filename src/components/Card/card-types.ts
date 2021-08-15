@@ -9,5 +9,5 @@ export interface ICard {
 }
 
 export interface IContainer {
-  loading?: boolean
+  loading?: 'true' | 'false'
 }

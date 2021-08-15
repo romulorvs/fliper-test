@@ -1,10 +1,10 @@
 import { connect } from 'react-redux'
 import * as actions from 'src/components/Header/header-actions'
 import { IHeaderMapStateToProps } from 'src/components/'
-import Options from './options-component'
+import CardOptions from './card-options-component'
 
 const mapStateToProps = ({ header }: IHeaderMapStateToProps) => header
 
-const ConnectedOptions = connect(mapStateToProps, actions)(Options)
+const ConnectedCardOptions = connect(mapStateToProps, actions)(CardOptions)
 
-export default ConnectedOptions
+export default ConnectedCardOptions

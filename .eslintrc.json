@@ -57,6 +57,7 @@
     "import/no-cycle": "off",
     "no-console": "off",
     "camelcase": "off",
+    "@next/next/no-img-element": "off",
     "no-underscore-dangle": "off",
     "jsx-a11y/label-has-associated-control": "off",
     "@typescript-eslint/no-empty-function": "off",

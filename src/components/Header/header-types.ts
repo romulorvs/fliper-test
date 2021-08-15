@@ -19,7 +19,7 @@ export interface IHeaderReducerAction {
 }
 
 export interface IHeader extends IHeaderReducerState {
-  setAccountId: () => void
+  setAccountId: (accountId: number) => void
   resetHeaderState: () => void
   setAmountVisibility: (visibility: boolean) => void
   children?: JSX.Element
