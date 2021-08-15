@@ -51,8 +51,6 @@ function dashboardReducer(
       return commonState
 
     case FETCH_DASHBOARD_DATA:
-      console.log('action.payload: ', action.payload.wealthSummary_by_pk)
-
       return {
         ...commonState,
         ...action.payload.wealthSummary_by_pk,

@@ -11,12 +11,6 @@ export interface IDashboardReducerState {
 }
 
 export interface IDashboardReducerAction {
-  type:
-    | Constants.FETCH_DASHBOARD_DATA
-    | Constants.FETCH_DASHBOARD_ON_ERROR
-    | Constants.FETCH_DASHBOARD_LOADING
-    | Constants.RESOLVE_DASHBOARD_ERROR
-    | Constants.RESET_DASHBOARD
   payload: {
     wealthSummary_by_pk: {
       cdi: number
@@ -25,6 +19,12 @@ export interface IDashboardReducerAction {
       total: number
     }
   }
+  type:
+    | Constants.FETCH_DASHBOARD_DATA
+    | Constants.FETCH_DASHBOARD_ON_ERROR
+    | Constants.FETCH_DASHBOARD_LOADING
+    | Constants.RESOLVE_DASHBOARD_ERROR
+    | Constants.RESET_DASHBOARD
 }
 
 export interface IDashboard extends IDashboardReducerState {

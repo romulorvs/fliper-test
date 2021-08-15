@@ -1,5 +1,5 @@
 import { Route, RouteProps } from 'react-router-dom'
-import ConnectedWrapper from './wrapper-component-conected'
+import { Wrapper } from 'src/components/'
 
 const AppRoute = ({ children, component, ...rest }: RouteProps) => {
   const Component = component as any
@@ -16,9 +16,9 @@ const AppRoute = ({ children, component, ...rest }: RouteProps) => {
     <Route
       {...rest}
       render={matchProps => (
-        <ConnectedWrapper>
+        <Wrapper>
           <Component {...matchProps} />
-        </ConnectedWrapper>
+        </Wrapper>
       )}
     >
       {children}

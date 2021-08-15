@@ -5,4 +5,9 @@ export interface ICard {
   profitability: number
   total: number
   loading: boolean
+  isAmountVisible: boolean
+}
+
+export interface IContainer {
+  loading?: boolean
 }

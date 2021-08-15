@@ -7,17 +7,24 @@ export interface IHeaderReducerState {
     id: number
     label: string
   }>
+  isAmountVisible: boolean
 }
 
 export interface IHeaderReducerAction {
-  type: Constants.HEADER_SET_ACCOUNT_ID | Constants.RESET_HEADER
-  payload: {
-    id: number
-  }
+  payload: any
+  type:
+    | Constants.HEADER_SET_ACCOUNT_ID
+    | Constants.RESET_HEADER
+    | Constants.HEADER_SET_AMOUNT_VISIBILITY
 }
 
 export interface IHeader extends IHeaderReducerState {
   setAccountId: () => void
   resetHeaderState: () => void
+  setAmountVisibility: (visibility: boolean) => void
   children?: JSX.Element
+}
+
+export interface IHeaderMapStateToProps {
+  header: IHeader
 }

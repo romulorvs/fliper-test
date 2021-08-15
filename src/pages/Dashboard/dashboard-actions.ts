@@ -31,8 +31,6 @@ export const fetchDashboardData =
           payload,
         })
       } catch (error) {
-        console.log('error: ', error)
-
         dispatch({
           type: FETCH_DASHBOARD_ON_ERROR,
         })

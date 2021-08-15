@@ -1,5 +1,5 @@
 import { Header } from 'src/components'
-import { IWrapper } from './app-route-types'
+import { IWrapper } from './wrapper-types'
 
 function Wrapper({ header, children }: IWrapper) {
   return (

@@ -1,9 +1,9 @@
 import { connect } from 'react-redux'
 import * as actions from 'src/components/Header/header-actions'
+import { IHeaderMapStateToProps } from 'src/components'
 import Wrapper from './wrapper-component'
-import { IMapStateToProps } from './app-route-types'
 
-const mapStateToProps = ({ header }: IMapStateToProps) => ({
+const mapStateToProps = ({ header }: IHeaderMapStateToProps) => ({
   header,
 })
 
