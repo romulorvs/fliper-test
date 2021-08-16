@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import { colors, hover, shimmerLoader, slideUp } from 'src/styles'
+import { Link, LinkProps } from 'react-router-dom'
 import { IContainer } from './card-types'
 
 const loadingContainer = `
@@ -85,22 +86,34 @@ export const ButtonContainer = styled.article`
   padding-top: 1.7rem;
   border-top: 2px solid #e5e8ee;
 `
-export const MoreButton = styled.button`
+export const MoreButtonContainer = styled.div`
   display: flex;
-  padding: 0.7rem 1.2rem;
-  font-size: 1.4rem;
-  border: 1px solid ${colors.primaryColor};
-  border-radius: 16rem;
-  color: ${colors.primaryColor};
-  font-weight: 900;
-  box-shadow: 1px 1px 1px 0 #bfc5d6;
 
-  ${hover(
+  a {
+    display: flex;
+    padding: 0.7rem 1.2rem;
+    font-size: 1.4rem;
+    border: 1px solid ${colors.primaryColor};
+    border-radius: 16rem;
+    color: ${colors.primaryColor};
+    font-weight: 900;
+    box-shadow: 1px 1px 1px 0 #bfc5d6;
+
+    ${hover(
+      `
+      background-color: #e8ebf6;
+    `,
+      `
+      background-color: #dfe2ef;
     `
-    background-color: #e8ebf6;
-  `,
-    `
-    background-color: #dfe2ef;
-  `
-  )}
+    )}
+  }
 `
+
+export const MoreButton = ({ children, ...props }: LinkProps) => {
+  return (
+    <MoreButtonContainer>
+      <Link {...props}>{children}</Link>
+    </MoreButtonContainer>
+  )
+}

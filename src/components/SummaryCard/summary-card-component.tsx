@@ -1,16 +1,16 @@
 import { formatPrice } from 'src/helpers'
 import Options from '../CardOptions'
-import { ICard } from './summary-card-types'
+import { ISummaryCard } from './summary-card-types'
 import { Container, Title, Total, Stat } from './summary-card-styles'
 
-function Card({
+function SummaryCard({
   cdi,
   gain,
   profitability,
   total,
   loading,
   isAmountVisible,
-}: ICard) {
+}: ISummaryCard) {
   return (
     <Container loading={`${loading}`}>
       <Title>
@@ -44,4 +44,4 @@ function Card({
   )
 }
 
-export default Card
+export default SummaryCard

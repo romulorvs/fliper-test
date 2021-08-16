@@ -1,4 +1,5 @@
 import { formatPrice } from 'src/helpers'
+import { useLocation } from 'react-router-dom'
 import Options from '../CardOptions'
 import { ICard } from './card-types'
 import {
@@ -19,6 +20,8 @@ function Card({
   loading,
   isAmountVisible,
 }: ICard) {
+  const { pathname } = useLocation()
+
   return (
     <Container loading={`${loading}`}>
       <Title>
@@ -50,11 +53,11 @@ function Card({
         <strong>{isAmountVisible ? `R$ ${formatPrice(gain)}` : '-----'}</strong>
       </Stat>
 
-      <ButtonContainer>
-        <MoreButton onClick={() => console.log('clicking')}>
-          VER MAIS
-        </MoreButton>
-      </ButtonContainer>
+      {pathname === '/dashboard' && (
+        <ButtonContainer>
+          <MoreButton to="/details">VER MAIS</MoreButton>
+        </ButtonContainer>
+      )}
     </Container>
   )
 }

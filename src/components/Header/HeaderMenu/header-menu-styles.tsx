@@ -83,7 +83,7 @@ export const AccountButton = styled.button`
   }
 `
 
-export const Menu = styled.article`
+export const Menu = styled.ul`
   display: flex;
   flex-direction: column;
   border-radius: 1.8rem;
