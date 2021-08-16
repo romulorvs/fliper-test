@@ -1,5 +1,5 @@
 import { Route, RouteProps } from 'react-router-dom'
-import { Wrapper } from 'src/components/'
+import { Wrapper } from 'src/components'
 
 const AppRoute = ({ children, component, ...rest }: RouteProps) => {
   const Component = component as any
