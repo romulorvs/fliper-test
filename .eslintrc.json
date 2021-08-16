@@ -27,7 +27,6 @@
       "eslint-plugin-import-helpers",
       "prettier"
   ],
-  "ignorePatterns": ["*.js", "node_modules", "dist", "public", "build", "export", "styles", ".next"],
   "rules": {
     "nonblock-statement-body-position": "off",
     "curly": "off",

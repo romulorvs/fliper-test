@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle } from 'styled-components'
 import backgroundImg from 'src/assets/background.svg'
 
 export const colors = {
@@ -14,7 +14,7 @@ export const colors = {
   buttonColorLighterHover: 'rgba(0, 35, 121, 0.2)',
   buttonColorLighterActive: 'rgba(0, 35, 121, 0.18)',
   lightText: '#D3E1FF',
-  extraLightText: '#8DB0FF'
+  extraLightText: '#8DB0FF',
 }
 
 export const GlobalStyle = createGlobalStyle`
@@ -91,7 +91,7 @@ export const GlobalStyle = createGlobalStyle`
       transform: translateY(0px)
     }
   }
-`;
+`
 
 export const hover = (hoverRules: string, activeRules?: string) => `
   outline: none;
@@ -107,12 +107,16 @@ export const hover = (hoverRules: string, activeRules?: string) => `
     ${hoverRules}
   }
 
-  ${activeRules ? `
+  ${
+    activeRules
+      ? `
     &:active {
       transition: unset;
       ${activeRules}
     }
-  ` : ''}
+  `
+      : ''
+  }
 `
 
 export const shimmerLoader = `
