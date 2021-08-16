@@ -17,7 +17,7 @@ export const Button = styled.button`
   )}
 `
 
-export const Menu = styled.div`
+export const Menu = styled.ul`
   display: flex;
   align-items: center;
   justify-content: space-between;

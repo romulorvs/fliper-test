@@ -8,7 +8,7 @@ import {
 } from 'src/components'
 import { Button, Menu, MenuItem } from './card-options-styles'
 
-function Options({ isAmountVisible, setAmountVisibility }: IHeader) {
+function CardOptions({ isAmountVisible, setAmountVisibility }: IHeader) {
   const [showMenu, setShowMenu] = useState(false)
 
   function toggleShowMenu() {
@@ -36,4 +36,4 @@ function Options({ isAmountVisible, setAmountVisibility }: IHeader) {
   )
 }
 
-export default Options
+export default CardOptions

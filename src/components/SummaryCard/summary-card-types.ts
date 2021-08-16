@@ -1,4 +1,4 @@
-export interface ICard {
+export interface ISummaryCard {
   cdi: number
   gain: number
   profitability: number

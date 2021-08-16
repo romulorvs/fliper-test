@@ -1,6 +1,7 @@
 import { connect } from 'react-redux'
 import * as actions from 'src/components/Header/header-actions'
 import { IHeaderMapStateToProps } from 'src/components/'
+import { getTestingComponent } from 'src/helpers'
 import Card from './card-component'
 
 const mapStateToProps = ({
@@ -9,6 +10,8 @@ const mapStateToProps = ({
   isAmountVisible,
 })
 
-const ConnectedCard = connect(mapStateToProps, actions)(Card)
+const ConnectedCard = getTestingComponent(
+  connect(mapStateToProps, actions)(Card || (() => null))
+)
 
 export default ConnectedCard

@@ -1,6 +1,6 @@
 # Fliper
 
-👉 **Veja o App em funcionamento**: https://eng-zap-challenge-javascript-romulorvs.vercel.app/
+👉 **Veja o App em funcionamento**: https://fliper-test-romulorvs.vercel.app/
 
 ---
 
