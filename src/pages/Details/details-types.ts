@@ -1,7 +1,18 @@
 import Constants from './details-constants'
 
+export interface ISummary {
+  cdi: number
+  gain: number
+  profitability: number
+  total: number
+}
+
 export interface IDetailsReducerState {
-  [key: string]: any
+  aggregate: ISummary
+  summary: Array<ISummary & { accountLabel: string }>
+  loading: boolean
+  hasError: boolean
+  errorMessage: string
 }
 
 export interface IDetailsReducerAction {
@@ -12,4 +23,11 @@ export interface IDetailsReducerAction {
     | Constants.FETCH_DETAILS_ON_ERROR
     | Constants.RESOLVE_DETAILS_ERROR
     | Constants.RESET_DETAILS
+}
+
+export interface IDetails extends IDetailsReducerState {
+  isAmountVisible: true
+  fetchDetailsData: () => void
+  resolveError: () => void
+  resetDetailsData: () => void
 }

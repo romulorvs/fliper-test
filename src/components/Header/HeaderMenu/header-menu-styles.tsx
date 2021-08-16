@@ -1,5 +1,6 @@
 import styled from 'styled-components'
-import { colors, forMobile, hover } from 'src/styles'
+import { Link, LinkProps, useLocation } from 'react-router-dom'
+import { colors, forMobile, hover, slideDownSmall } from 'src/styles'
 
 export const Container = styled.nav`
   display: flex;
@@ -70,7 +71,7 @@ export const AccountButton = styled.button`
 
     svg {
       margin-left: 0.8rem;
-      margin-right: 0.8rem;
+      margin-right: 1.6rem;
       width: 1rem;
       height: 1rem;
       fill: white;
@@ -95,6 +96,7 @@ export const Menu = styled.article`
   width: 100%;
   min-width: 130px;
   left: 0;
+  ${slideDownSmall}
 
   ${forMobile(`
     min-width: 160px;
@@ -102,60 +104,77 @@ export const Menu = styled.article`
   `)}
 `
 
-export const MenuItem = styled.button`
+export const MenuItemContainer = styled.div`
   display: flex;
-  padding: 0.6rem;
-  align-items: center;
-  overflow: hidden;
-  background-color: white;
-  height: 3.7rem;
+  width: 100%;
 
-  ${forMobile(`
-    height: 4.7rem;
-  `)}
-
-  & + button {
+  & + div {
     border-top: 1px solid #e5e8ee;
   }
 
-  ${hover(
-    `
-    background-color: rgba(0, 0, 0, 0.08);
-  `,
-    `
-    background-color: rgba(0, 0, 0, 0.12);
-  `
-  )}
-
-  strong {
+  > a {
     display: flex;
+    width: 100%;
+    padding: 0.6rem;
     align-items: center;
-    justify-content: center;
-    width: 2.6rem;
-    height: 2.6rem;
-    border-radius: 4.6rem;
-    font-size: 1.3rem;
-    font-weight: 500;
-    background-color: ${colors.buttonColor};
-    color: white;
-    transition: background-color 0.1s ease-in;
+    overflow: hidden;
+    background-color: white;
+    height: 3.7rem;
 
     ${forMobile(`
-      font-size: 1.6rem;
-      width: 3.6rem;
-      height: 3.6rem;
+      height: 4.7rem;
     `)}
-  }
 
-  span {
-    display: flex;
-    align-items: center;
-    margin-left: 0.8rem;
-    font-size: 1.4rem;
-    white-space: nowrap;
+    ${hover(
+      `
+      background-color: rgba(0, 0, 0, 0.08);
+    `,
+      `
+      background-color: rgba(0, 0, 0, 0.12);
+    `
+    )}
 
-    ${forMobile(`
-      font-size: 1.7rem;
-    `)}
+    strong {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 2.6rem;
+      height: 2.6rem;
+      border-radius: 4.6rem;
+      font-size: 1.3rem;
+      font-weight: 500;
+      background-color: ${colors.buttonColor};
+      color: white;
+      transition: background-color 0.1s ease-in;
+
+      ${forMobile(`
+        font-size: 1.6rem;
+        width: 3.6rem;
+        height: 3.6rem;
+      `)}
+    }
+
+    span {
+      display: flex;
+      align-items: center;
+      margin-left: 0.8rem;
+      font-size: 1.4rem;
+      white-space: nowrap;
+
+      ${forMobile(`
+        font-size: 1.7rem;
+      `)}
+    }
   }
 `
+
+export const MenuItem = ({ children, to, ...props }: LinkProps) => {
+  const location = useLocation()
+  return (
+    <MenuItemContainer>
+      <Link to={to} {...props} replace={location.pathname === to}>
+        {children}
+      </Link>
+    </MenuItemContainer>
+  )
+}

@@ -3,18 +3,27 @@ import client from 'src/services/apolloClient'
 
 export const query = gql`
   query MyQuery {
+    wealthSummary_aggregate {
+      aggregate {
+        sum {
+          cdi
+          gain
+          profitability
+          total
+        }
+      }
+    }
     wealthSummary {
-      id
       cdi
       gain
-      hasHistory
       profitability
       total
     }
   }
 `
-async function fetchWealthDetails() {
+
+async function fetchAggregatedWealth() {
   return client.query({ query })
 }
 
-export default fetchWealthDetails
+export default fetchAggregatedWealth

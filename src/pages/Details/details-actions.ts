@@ -1,6 +1,6 @@
 import { Action } from 'redux'
 import { ThunkAction } from 'redux-thunk'
-import { fetchWealthDetails } from 'src/middlewares/details'
+import { fetchAggregatedWealth } from 'src/middlewares/details'
 import constants from './details-constants'
 
 const {
@@ -19,7 +19,7 @@ export const fetchDetailsData =
 
     async function fetchData() {
       try {
-        const { data: payload, error } = await fetchWealthDetails()
+        const { data: payload, error } = await fetchAggregatedWealth()
 
         if (error) {
           throw new Error('Cannot Fetch Details Data')

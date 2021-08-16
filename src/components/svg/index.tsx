@@ -32,3 +32,14 @@ export const TriangleDownSVG = () => (
     <path d="M4.86603 6.5C4.48113 7.16667 3.51887 7.16667 3.13397 6.5L0.535898 2C0.150997 1.33333 0.632122 0.500001 1.40192 0.500001L6.59807 0.5C7.36788 0.5 7.849 1.33333 7.4641 2L4.86603 6.5Z" />
   </svg>
 )
+
+export const DetailsSVG = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 26 26" fill="none">
+    <circle cx="9.5" cy="9.5" r="1.5" fill="white" />
+    <circle cx="9.5" cy="13.5" r="1.5" fill="white" />
+    <circle cx="9.5" cy="17.5" r="1.5" fill="white" />
+    <rect x="12" y="8.5" width="7" height="2" rx="1" fill="white" />
+    <rect x="12" y="12.5" width="7" height="2" rx="1" fill="white" />
+    <rect x="12" y="16.5" width="7" height="2" rx="1" fill="white" />
+  </svg>
+)

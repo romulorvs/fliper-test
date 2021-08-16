@@ -1,3 +1,4 @@
+import { ISummary } from 'src/pages/Details/details-types'
 import Constants from './header-constants'
 
 export interface IHeaderReducerState {
@@ -19,12 +20,23 @@ export interface IHeaderReducerAction {
 }
 
 export interface IHeader extends IHeaderReducerState {
+  loading: boolean
+  aggregate: ISummary
   setAccountId: (accountId: number) => void
   resetHeaderState: () => void
   setAmountVisibility: (visibility: boolean) => void
+  fetchDetailsData: () => void
   children?: JSX.Element
 }
 
 export interface IHeaderMapStateToProps {
   header: IHeader
+  details: {
+    aggregate: ISummary
+    loading: boolean
+  }
+}
+
+export interface IPrice {
+  loading: 'true' | 'false'
 }

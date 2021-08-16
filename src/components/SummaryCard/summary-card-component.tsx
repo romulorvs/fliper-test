@@ -1,17 +1,9 @@
 import { formatPrice } from 'src/helpers'
 import Options from '../CardOptions'
-import { ICard } from './card-types'
-import {
-  Container,
-  Title,
-  Total,
-  Stat,
-  ButtonContainer,
-  MoreButton,
-} from './card-styles'
+import { ICard } from './summary-card-types'
+import { Container, Title, Total, Stat } from './summary-card-styles'
 
 function Card({
-  accountLabel,
   cdi,
   gain,
   profitability,
@@ -22,8 +14,7 @@ function Card({
   return (
     <Container loading={`${loading}`}>
       <Title>
-        Resumo da Conta {accountLabel}
-        <Options />
+        Resumo da Carteira <Options />
       </Title>
 
       <Total>
@@ -49,12 +40,6 @@ function Card({
         Ganho/mês
         <strong>{isAmountVisible ? `R$ ${formatPrice(gain)}` : '-----'}</strong>
       </Stat>
-
-      <ButtonContainer>
-        <MoreButton onClick={() => console.log('clicking')}>
-          VER MAIS
-        </MoreButton>
-      </ButtonContainer>
     </Container>
   )
 }

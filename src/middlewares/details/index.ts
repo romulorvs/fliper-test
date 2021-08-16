@@ -1,1 +1,1 @@
-export { default as fetchWealthDetails } from './fetchWealthDetails'
+export { default as fetchAggregatedWealth } from './fetchAggregatedWealth'

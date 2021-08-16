@@ -1,7 +1,7 @@
 import { connect } from 'react-redux'
 import * as actions from 'src/components/Header/header-actions'
 import { IHeaderMapStateToProps } from 'src/components/'
-import Card from './card-component'
+import SummaryCard from './summary-card-component'
 
 const mapStateToProps = ({
   header: { isAmountVisible },
@@ -9,6 +9,6 @@ const mapStateToProps = ({
   isAmountVisible,
 })
 
-const ConnectedCard = connect(mapStateToProps, actions)(Card)
+const ConnectedSummaryCard = connect(mapStateToProps, actions)(SummaryCard)
 
-export default ConnectedCard
+export default ConnectedSummaryCard

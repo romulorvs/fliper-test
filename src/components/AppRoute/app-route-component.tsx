@@ -15,8 +15,8 @@ const AppRoute = ({ children, component, ...rest }: RouteProps) => {
   return (
     <Route
       {...rest}
-      render={matchProps => (
-        <Wrapper>
+      render={(matchProps: any) => (
+        <Wrapper {...matchProps}>
           <Component {...matchProps} />
         </Wrapper>
       )}

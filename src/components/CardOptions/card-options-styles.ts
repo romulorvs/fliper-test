@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { hover } from 'src/styles'
+import { hover, slideDownSmall } from 'src/styles'
 
 export const Button = styled.button`
   width: 4rem;
@@ -9,10 +9,10 @@ export const Button = styled.button`
 
   ${hover(
     `
-    background-color: #ececec;
+    background-color: rgba(0, 0, 0, 0.07);
   `,
     `
-    background-color: #e0e0e0;
+    background-color: rgba(0, 0, 0, 0.1);
   `
   )}
 `
@@ -27,7 +27,8 @@ export const Menu = styled.div`
   border-radius: 0.8rem;
   overflow: hidden;
   background-color: white;
-  box-shadow: 2px 2px 1px 0 #bfc5d6;
+  box-shadow: 2px 2px 1px 0 rgba(26, 57, 144, 0.25);
+  ${slideDownSmall}
 `
 
 export const MenuItem = styled.button`

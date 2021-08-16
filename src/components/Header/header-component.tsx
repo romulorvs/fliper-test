@@ -1,7 +1,9 @@
+import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import { EyeClosedSVG, EyeOpenSVG } from 'src/components'
 import logo from 'src/assets/logo.png'
 import logoMobile from 'src/assets/logo-mobile.png'
-import { EyeClosedSVG, EyeOpenSVG } from 'src/components'
+import { formatPrice } from 'src/helpers'
 import HeaderMenu from './HeaderMenu'
 import { IHeader } from './header-types'
 import {
@@ -15,11 +17,18 @@ import {
 function Header({
   isAmountVisible,
   setAmountVisibility,
+  fetchDetailsData,
+  loading: loadindDetails,
+  aggregate: { total },
   ...headerMenuData
 }: IHeader) {
   function toggleAmountVisibility() {
     setAmountVisibility(!isAmountVisible)
   }
+
+  useEffect(() => {
+    fetchDetailsData()
+  }, [])
 
   return (
     <Container>
@@ -32,9 +41,9 @@ function Header({
         </Picture>
       </Link>
       <Summary>
-        <Price>
+        <Price loading={`${loadindDetails}`}>
           Sua Carteira:
-          <strong>R$ {isAmountVisible ? '123.565,23' : '-------'}</strong>
+          <strong>R$ {isAmountVisible ? formatPrice(total) : '-------'}</strong>
         </Price>
         <ToggleButton onClick={toggleAmountVisibility}>
           {isAmountVisible ? <EyeOpenSVG /> : <EyeClosedSVG />}

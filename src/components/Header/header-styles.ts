@@ -1,5 +1,24 @@
 import styled from 'styled-components'
-import { colors, hover, forMobile } from 'src/styles'
+import { colors, hover, shimmerLoaderBlue, forMobile } from 'src/styles'
+import { IPrice } from './header-types'
+
+const loadingContainer = `
+  position: relative;
+  border-radius: 0.8rem;
+  overflow: hidden;
+
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    ${shimmerLoaderBlue}
+    animation-duration: 4s;
+  }
+`
 
 export const Container = styled.header`
   display: flex;
@@ -8,7 +27,11 @@ export const Container = styled.header`
   background-color: ${colors.headerColor};
   height: 7rem;
   padding: 0 2rem;
-  position: relative;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 4;
 `
 
 export const Picture = styled.picture`
@@ -36,7 +59,7 @@ export const Summary = styled.section`
   padding: 0 2rem;
 `
 
-export const Price = styled.p`
+export const Price = styled.p<IPrice>`
   display: flex;
   align-items: baseline;
   color: ${colors.extraLightText};
@@ -51,6 +74,8 @@ export const Price = styled.p`
     color: ${colors.lightText};
     font-size: 1.6rem;
   }
+
+  ${p => (p.loading === 'true' ? loadingContainer : '')};
 `
 
 export const ToggleButton = styled.button`

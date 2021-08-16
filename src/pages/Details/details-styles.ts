@@ -10,5 +10,5 @@ export const Container = styled.main`
 
   ${forMobile(`
     padding-top: 140px;
-`)}
+  `)}
 `

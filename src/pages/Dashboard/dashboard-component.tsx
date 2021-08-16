@@ -4,14 +4,7 @@ import { Card } from 'src/components/'
 import { IDashboard } from './dashboard-types'
 import { Container } from './dashboard-styles'
 
-function Dashboard({
-  accountId,
-  hasError,
-  errorMessage,
-  fetchDashboardData,
-  resolveError,
-  ...cardData
-}: IDashboard) {
+function Dashboard({ accountId, fetchDashboardData, ...cardData }: IDashboard) {
   useEffect(() => setPageTitle('Dashboard - Fliper'), [])
 
   useEffect(() => {
@@ -21,7 +14,6 @@ function Dashboard({
   return (
     <Container>
       <Card {...cardData} />
-      {hasError && <p>DEU RUIM!</p>}
     </Container>
   )
 }
