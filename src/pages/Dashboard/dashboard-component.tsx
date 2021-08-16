@@ -5,7 +5,7 @@ import { IDashboard } from './dashboard-types'
 import { Container } from './dashboard-styles'
 
 function Dashboard({ accountId, fetchDashboardData, ...cardData }: IDashboard) {
-  useEffect(() => setPageTitle('Dashboard - Fliper'), [])
+  useEffect(() => setPageTitle('Dashboard'), [])
 
   useEffect(() => {
     fetchDashboardData(accountId)

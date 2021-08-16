@@ -1,4 +1,4 @@
-# Fliper App
+# Fliper
 
 👉 **Veja o App em funcionamento**: https://eng-zap-challenge-javascript-romulorvs.vercel.app/
 
@@ -10,7 +10,7 @@ Controle todos os seus investimentos de forma automática e faça uma gestão in
 
 ## Screenshots (Web e Mobile)
 
-![Fliper App](.github/fliper.png)
+![Fliper](.github/fliper.png)
 
 ---
 

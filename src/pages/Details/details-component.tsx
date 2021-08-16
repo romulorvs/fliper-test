@@ -6,7 +6,7 @@ import { IDetails } from './details-types'
 
 function Details({ aggregate, loading, summary, fetchDetailsData }: IDetails) {
   useEffect(() => {
-    setPageTitle('Sua Carteira - Fliper')
+    setPageTitle('Sua Carteira')
     fetchDetailsData()
   }, [])
 
